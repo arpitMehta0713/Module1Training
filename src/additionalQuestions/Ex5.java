@@ -3,8 +3,8 @@ package additionalQuestions;
 public class Ex5 {
 	public static void main(String args[]) {
 		Ex5 project = new Ex5();
-		project.run("WorldWorld");
-		System.out.println(run("WorldWorld"));
+		project.run("World*World");
+		System.out.println(run("World*World"));
 	}
 
 	public static boolean run(String string) {

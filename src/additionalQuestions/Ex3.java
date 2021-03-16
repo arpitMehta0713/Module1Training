@@ -1,5 +1,3 @@
-package additionalQuestions;
-
 import java.util.*;
 
 public class Ex3 {
@@ -15,11 +13,22 @@ public class Ex3 {
 		list2.add(2);
 		list2.add(3);
 		list2.add(5);
-		project.run(list1, list2);
+		Integer array[] = project.run(list1, list2);
+		for(Integer element : array){
+			System.out.println(element);
+		}
 	}
 
-	public void run(ArrayList<Integer> list1, ArrayList<Integer> list2) {
-		ArrayList<Integer> commonItems = new ArrayList<>();
-		list1.removeAll(list2)
+	public Integer[] run(ArrayList<Integer> list1, ArrayList<Integer> list2) {
+		ArrayList<Integer> list1Unique = new ArrayList<>(list1);
+		list1Unique.removeAll(list2);
+		ArrayList<Integer> list2Unique = new ArrayList<>(list2);
+		list2Unique.removeAll(list1);
+		ArrayList<Integer> uniqueItems = new ArrayList<>();
+		uniqueItems.addAll(list1Unique);
+		uniqueItems.addAll(list2Unique);
+		Integer[] array = uniqueItems.toArray(new Integer[0]);
+
+		return array;
 	}
 }
