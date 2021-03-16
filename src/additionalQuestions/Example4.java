@@ -28,12 +28,12 @@ class Example4
 	while(iterator2.hasNext()){
 	String item = iterator2.next();
 	if(item.endsWith("N")|| item.endsWith("E")||item.endsWith("n")||item.endsWith("e")){
-		iterator.remove();
+		iterator2.remove();
 	    }
 	}
 	Set<String> filteredSet = new LinkedHashSet<>();
-	filteredSet.addAll(list1);
 	filteredSet.addAll(list2);
+	filteredSet.addAll(list1);
 	String updatedArray[] = filteredSet.toArray(new String[0]);
 	return updatedArray;
     }
